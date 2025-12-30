@@ -1,0 +1,38 @@
+/* =========================
+   GOOGLE FONTS (MUST BE FIRST)
+   ========================= */
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;500;700&display=swap');
+
+/* =========================
+   TAILWIND DIRECTIVES
+   ========================= */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =========================
+   BASE THEME VARIABLES
+   ========================= */
+@layer base {
+  :root {
+    /* Deep midnight blue / purple */
+    --background: 240 30% 3%;   /* #050508 */
+    --foreground: 0 0% 98%;
+  }
+
+  body {
+    @apply bg-[#050508] text-foreground antialiased overflow-x-hidden;
+    font-family: 'DM Sans', system-ui, sans-serif;
+  }
+}
+
+/* =========================
+   CUSTOM UTILITIES
+   ========================= */
+@layer utilities {
+  .font-heavy {
+    font-family: 'Anton', 'Impact', sans-serif;
+    letter-spacing: 0.02em;
+  }
+}
