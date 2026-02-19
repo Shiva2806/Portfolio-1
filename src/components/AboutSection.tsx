@@ -5,19 +5,16 @@ export const AboutSection = () => {
   return (
     <section
       id="about"
-      className="relative py-32 px-6 md:px-12 lg:px-20 bg-[#050508] overflow-hidden"
+      className="relative py-32 px-6 md:px-12 lg:px-20 overflow-hidden"
     >
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
 
-        {/* IMAGE — diagonal in (top-left → center) */}
+        {/* IMAGE */}
         <motion.div
-          initial={{ opacity: 0, x: -160, y: 120 }}
-          whileInView={{ opacity: 1, x: 0, y: 0 }}
-          viewport={{ once: true, margin: "-120px" }}
-          transition={{
-            duration: 1.4,
-            ease: [0.22, 1, 0.36, 1],
-          }}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.55, ease: "easeOut" }}
           className="relative"
         >
           <img
@@ -27,19 +24,15 @@ export const AboutSection = () => {
           />
 
           {/* very subtle glass depth (NO BORDER) */}
-          <div className="absolute inset-0 rounded-[2rem] bg-black/10 backdrop-blur-sm pointer-events-none" />
+          <div className="absolute inset-0 rounded-[2rem] bg-[#06070d]/10 backdrop-blur-sm pointer-events-none" />
         </motion.div>
 
-        {/* TEXT — diagonal in (bottom-right → center) */}
+        {/* TEXT */}
         <motion.div
-          initial={{ opacity: 0, x: 160, y: -120 }}
-          whileInView={{ opacity: 1, x: 0, y: 0 }}
-          viewport={{ once: true, margin: "-120px" }}
-          transition={{
-            duration: 1.4,
-            ease: [0.22, 1, 0.36, 1],
-            delay: 0.2,
-          }}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.55, delay: 0.08, ease: "easeOut" }}
         >
           <span className="block text-xs font-mono uppercase tracking-[0.35em] text-cyan-400 mb-4">
             // About Me

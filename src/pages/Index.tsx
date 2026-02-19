@@ -3,17 +3,16 @@ import { WorkSection } from "@/components/WorkSection";
 import { ServicesSection } from "@/components/ServicesSection";
 import { AboutSection } from "@/components/AboutSection";
 import { Footer } from "@/components/Footer";
+import { PageLayout } from "@/components/PageLayout";
 
-const Index = () => {
-  return (
-    <main className="w-full bg-[#050508] text-white overflow-x-hidden selection:bg-cyan-400/20 selection:text-cyan-200">
-      <HeroSection />
-      <WorkSection />
-      <ServicesSection />
-      <AboutSection />
-      <Footer />
-    </main>
-  );
-};
+const Index = () => (
+  <PageLayout>
+    <HeroSection />
+    <WorkSection />
+    <ServicesSection />
+    <AboutSection />
+    <Footer />
+  </PageLayout>
+);
 
 export default Index;

@@ -16,13 +16,13 @@
    ========================= */
 @layer base {
   :root {
-    /* Deep midnight blue / purple */
-    --background: 240 30% 3%;   /* #050508 */
+    /* Deep dark navy */
+    --background: 225 25% 4%;   /* #06070d */
     --foreground: 0 0% 98%;
   }
 
   body {
-    @apply bg-[#050508] text-foreground antialiased overflow-x-hidden;
+    @apply bg-[#06070d] text-foreground antialiased overflow-x-hidden;
     font-family: 'DM Sans', system-ui, sans-serif;
   }
 }

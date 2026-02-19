@@ -1,13 +1,12 @@
-'use client';
-
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
 
 const projects = [
   {
     id: 1,
     title: "DEZHYNE",
-    subtitle: "AI-DRIVEN WEBSITE & AUTOMATION PLATFORM",
+    subtitle: "CLIENT WEBSITE — DIGITAL AGENCY",
     description:
       "Designed and developed a production-ready website and AI-enabled workflows for Dezhyne, a digital agency providing website and automation services.",
     tech: ["NEXT.JS", "TYPESCRIPT", "TAILWIND", "OPENAI"],
@@ -32,8 +31,7 @@ export const WorkSection = () => {
   return (
     <section
   id="projects"
-  className="relative px-6 md:px-12 lg:px-20 py-32
-             bg-[radial-gradient(1200px_600px_at_20%_-20%,rgba(56,189,248,0.08),transparent_60%),linear-gradient(135deg,#020205_0%,#07040f_45%,#0b0618_100%)]"
+  className="relative px-6 md:px-12 lg:px-20 py-32"
   >
 
       {/* SECTION HEADER */}
@@ -41,7 +39,7 @@ export const WorkSection = () => {
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 0.55, ease: "easeOut" }}
         className="mb-16"
       >
         <span className="text-xs uppercase tracking-[0.35em] text-cyan-400/70 font-bold">
@@ -65,7 +63,7 @@ export const WorkSection = () => {
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: index * 0.1 }}
+            transition={{ duration: 0.55, delay: index * 0.08, ease: "easeOut" }}
             className="group relative overflow-hidden rounded-xl cursor-pointer"
           >
             <div className="aspect-[16/9] relative overflow-hidden">
@@ -80,7 +78,7 @@ export const WorkSection = () => {
               />
 
               {/* OVERLAY */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#020205]/95 via-[#020205]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#06070d]/95 via-[#06070d]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
               {/* CONTENT */}
               <div className="absolute inset-0 p-6 md:p-8 flex flex-col justify-end">
@@ -119,18 +117,18 @@ export const WorkSection = () => {
 
       {/* VIEW ALL CTA */}
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.6, delay: 0.4 }}
+        transition={{ duration: 0.55, delay: 0.3, ease: "easeOut" }}
         className="mt-16 flex justify-center"
       >
-        <a
-          href="/projects"
-          className="text-xs uppercase tracking-[0.35em] text-slate-300 hover:text-white transition-colors"
+        <Link
+          to="/projects"
+          className="text-xs uppercase tracking-[0.35em] text-slate-300 hover:text-cyan-300 transition-colors"
         >
           View all projects →
-        </a>
+        </Link>
       </motion.div>
     </section>
   );

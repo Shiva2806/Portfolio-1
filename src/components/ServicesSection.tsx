@@ -29,32 +29,30 @@ const services = [
 ];
 
 const itemVariants = {
-  hidden: {
-    opacity: 0,
-    y: 120,
-    scale: 0.96,
-  },
-  visible: {
+  hidden: { opacity: 0, y: 40 },
+  visible: (i: number) => ({
     opacity: 1,
     y: 0,
-    scale: 1,
-    transition: {
-      duration: 0.9,
-      ease: [0.22, 1, 0.36, 1],
-    },
-  },
+    transition: { duration: 0.55, delay: i * 0.08, ease: "easeOut" },
+  }),
 };
 
 export function ServicesSection() {
   return (
     <section
       id="services"
-      className="relative bg-[#050508] text-white py-40"
+      className="relative text-white py-40"
     >
       <div className="max-w-6xl mx-auto px-6">
 
         {/* Header */}
-        <div className="mb-32">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.55, ease: "easeOut" }}
+          className="mb-32"
+        >
           <span className="text-xs tracking-[0.3em] text-cyan-400 uppercase">
             // Capabilities
           </span>
@@ -64,17 +62,18 @@ export function ServicesSection() {
               Build
             </span>
           </h2>
-        </div>
+        </motion.div>
 
         {/* Services */}
         <div className="space-y-48">
-          {services.map((service) => (
+          {services.map((service, i) => (
             <motion.div
               key={service.id}
+              custom={i}
               variants={itemVariants}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, margin: "-40%" }}
+              viewport={{ once: true }}
               className="max-w-4xl"
             >
               <div className="flex items-start gap-8">

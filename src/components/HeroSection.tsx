@@ -161,6 +161,8 @@ export const HeroSection = () => {
 
             {/* 🔒 Spline watermark cover */}
             <div className="absolute bottom-4 right-4 w-[140px] h-[40px] bg-[#020205] z-50 pointer-events-none" />
+            {/* 🔒 Spline watermark cover */}
+            <div className="absolute bottom-4 right-4 w-[140px] h-[40px] bg-[#020205] z-50 pointer-events-none" />
           </motion.div>
         </div>
 
